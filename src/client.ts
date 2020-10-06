@@ -250,4 +250,5 @@ void async function () {
   })
   const response = await r.send()
   const dom = parseHTML((response as any).body)
+  console.log(JSON.stringify(dom, null, '  '))
 }()
