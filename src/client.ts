@@ -1,5 +1,7 @@
 import * as net from 'net'
 import { parseHTML } from './parser'
+import render from './render'
+import images from 'images'
 
 export interface optionsInter {
   method?: 'GET' | 'POST',
@@ -250,5 +252,7 @@ void async function () {
   })
   const response = await r.send()
   const dom = parseHTML((response as any).body)
-  console.log(JSON.stringify(dom, null, '  '))
+  let viewport = images(800, 800)
+  render(viewport, dom)
+  viewport.save('view.jpg')
 }()

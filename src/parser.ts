@@ -1,13 +1,14 @@
 import css from 'css'
+import layout from './layout'
 
-type cType = Symbol | string
-type tokenType = {
+export type cType = Symbol | string
+export type tokenType = {
   type?: string,
   tagName?: string,
   content?: string,
   isSelfClosing?: string
 }
-type topType = {
+export type topType = {
   tagName?: string,
   children?: topType[]
   content?: string
@@ -161,6 +162,7 @@ function emit(token: tokenType) {
       if (top.tagName === 'style') {
         addCSSRules(top.children[0].content)
       }
+      layout(top)
       stack.pop()
     }
     currentTextNode = null

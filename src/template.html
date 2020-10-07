@@ -6,16 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Browser</title>
   <style>
-    #k {
-      border: 1px solid green;
-    }
     body .w {
-      border: 2px solid red;
-      width: 300px;
-      height: 300px;
+      display: flex;
     }
     body div .o {
-      border: 1px solid saddlebrown;
+      flex: 1;
+      border: 1px solid rgb(255, 100, 0);
+      width: 50px;
+      height: 50px;
+    }
+
+    body div .k {
+      flex: 1;
+      border: 1px solid rgb(10, 10, 200);
       width: 50px;
       height: 50px;
     }
@@ -23,8 +26,9 @@
 </head>
 
 <body kkk=123>
-  <div class="w" id="k">
+  <div class="w">
     <div class="o"></div>
+    <div class="k"></div>
   </div>
 </body>
 
